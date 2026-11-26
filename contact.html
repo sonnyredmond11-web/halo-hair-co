@@ -52,99 +52,194 @@
     </div>
   </div>
 
-  <!-- ── PAGE HERO ── -->
-  <div class="page-hero">
-    <p class="label">Get in Touch</p>
-    <h1 class="page-hero__title">Contact Us</h1>
-    <div class="divider"></div>
-    <p class="page-hero__sub">Shade matching · Order support · Wholesale enquiries</p>
-  </div>
-
-  <!-- ── CONTACT GRID ── -->
-  <div class="container">
-    <div class="contact-grid">
-
-      <!-- FORM -->
-      <div>
-        <p class="label" style="margin-bottom:24px;">Send a Message</p>
-        <form class="contact-form" onsubmit="handleContactSubmit(event)">
-          <div class="form-group">
-            <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="Full name" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" class="form-input" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Subject</label>
-            <select class="form-input" style="cursor:pointer;">
-              <option value="">Select a topic</option>
-              <option value="shade">Free Shade Matching</option>
-              <option value="order">Order Support</option>
-              <option value="returns">Returns & Exchanges</option>
-              <option value="wholesale">Wholesale Enquiry</option>
-              <option value="other">Something Else</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea" placeholder="Tell us how we can help…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--gold" id="contactSubmitBtn" style="align-self:flex-start;">Send Message</button>
-          <p id="contactSuccess" style="display:none;font-family:'Cormorant Garant',serif;font-size:18px;color:var(--gold);margin-top:8px;">
-            Thank you — we'll be in touch within 24 hours.
-          </p>
-        </form>
-      </div>
-
-      <!-- INFO -->
-      <div class="contact-info">
-        <div class="contact-info__item">
-          <p class="label contact-info__label">Email</p>
-          <p class="contact-info__value">hello@halohairco.co.uk</p>
-        </div>
-        <div class="contact-info__item">
-          <p class="label contact-info__label">Response Time</p>
-          <p class="contact-info__value">Within 24 hours</p>
-        </div>
-        <div class="contact-info__item">
-          <p class="label contact-info__label">Free Shade Matching</p>
-          <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-top:6px;">Send us a photo of your natural hair in natural light and our stylists will recommend the perfect shade for you — completely free, no purchase necessary.</p>
-        </div>
-        <div class="contact-info__item">
-          <p class="label contact-info__label">Wholesale</p>
-          <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-top:6px;">We work with salons and stylists across the UK. Enquire about our trade programme for preferential pricing and dedicated support.</p>
-        </div>
-        <div style="margin-top:40px;padding-top:40px;border-top:1px solid var(--border);">
-          <p class="label" style="margin-bottom:16px;">Follow Us</p>
-          <div style="display:flex;gap:20px;">
-            <a href="#" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-mid)'">Instagram</a>
-            <a href="#" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-mid)'">TikTok</a>
-            <a href="#" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-mid)'">Pinterest</a>
-          </div>
-        </div>
-      </div>
-
+  <!-- ── CONTACT HERO ── -->
+  <section class="contact-page-hero">
+    <div class="contact-page-hero__bg">HELLO</div>
+    <div class="contact-page-hero__content">
+      <p class="label">Get in Touch</p>
+      <h1 class="contact-page-hero__title">We're here<br><em>for you.</em></h1>
+      <div class="divider"></div>
+      <p class="contact-page-hero__sub">Whether you need shade matching, order support, or simply want to know more — our team responds within 24 hours.</p>
     </div>
-  </div>
+  </section>
+
+  <!-- ── SERVICE CARDS ── -->
+  <section class="contact-services">
+    <div class="container">
+      <div class="contact-services__grid">
+
+        <div class="contact-service-card">
+          <span class="contact-service-card__icon">✦</span>
+          <h3 class="contact-service-card__title">Free Shade Matching</h3>
+          <p class="contact-service-card__text">Send us a photo of your natural hair in natural light and our stylists will find your perfect match — free, no purchase required.</p>
+          <p class="contact-service-card__detail">Response within 4 hours</p>
+        </div>
+
+        <div class="contact-service-card">
+          <span class="contact-service-card__icon">✦</span>
+          <h3 class="contact-service-card__title">Order Support</h3>
+          <p class="contact-service-card__text">Questions about your order, shipping, or returns? We handle every query personally — no chatbots, no scripted responses.</p>
+          <p class="contact-service-card__detail">Response within 24 hours</p>
+        </div>
+
+        <div class="contact-service-card">
+          <span class="contact-service-card__icon">✦</span>
+          <h3 class="contact-service-card__title">Wholesale & Trade</h3>
+          <p class="contact-service-card__text">Salons and stylists across the UK trust us for their extension needs. Ask about our trade programme for exclusive pricing and terms.</p>
+          <p class="contact-service-card__detail">Dedicated account manager</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MAIN CONTACT SECTION ── -->
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-main__grid">
+
+        <!-- FORM -->
+        <div class="contact-form-wrap">
+          <p class="label" style="margin-bottom:32px;">Send a Message</p>
+          <form class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="contact-form__row">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">How can we help?</label>
+              <select class="form-input" style="cursor:pointer;">
+                <option value="">Select a topic</option>
+                <option value="shade">Free Shade Matching</option>
+                <option value="order">Order Support</option>
+                <option value="returns">Returns &amp; Exchanges</option>
+                <option value="wholesale">Wholesale Enquiry</option>
+                <option value="other">Something Else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Message</label>
+              <textarea class="form-textarea form-textarea--tall" placeholder="Tell us how we can help…" required></textarea>
+            </div>
+            <div class="contact-form__footer">
+              <button type="submit" class="btn btn--gold" id="contactSubmitBtn">Send Message</button>
+              <p class="contact-form__note">We reply to every message personally, within 24 hours.</p>
+            </div>
+            <p id="contactSuccess" class="contact-form__success" style="display:none;">
+              Thank you — we'll be in touch within 24 hours.
+            </p>
+          </form>
+        </div>
+
+        <!-- INFO PANEL -->
+        <div class="contact-info-panel">
+
+          <div class="contact-info-panel__block">
+            <p class="label contact-info-panel__label">Direct Email</p>
+            <a href="mailto:hello@halohairco.co.uk" class="contact-info-panel__value contact-info-panel__link">hello@halohairco.co.uk</a>
+          </div>
+
+          <div class="contact-info-panel__block">
+            <p class="label contact-info-panel__label">Hours</p>
+            <p class="contact-info-panel__value">Mon – Fri &nbsp;·&nbsp; 9am – 6pm</p>
+            <p class="contact-info-panel__note">We reply to all messages within 24 hours, including weekends for urgent shade matching requests.</p>
+          </div>
+
+          <div class="contact-info-panel__block">
+            <p class="label contact-info-panel__label">Based In</p>
+            <p class="contact-info-panel__value">London, United Kingdom</p>
+          </div>
+
+          <div class="contact-info-panel__social">
+            <p class="label contact-info-panel__label" style="margin-bottom:20px;">Follow Us</p>
+            <div class="contact-info-panel__social-links">
+              <a href="#" class="contact-social-link">
+                <span class="contact-social-link__name">Instagram</span>
+                <span class="contact-social-link__handle">@halohairco</span>
+              </a>
+              <a href="#" class="contact-social-link">
+                <span class="contact-social-link__name">TikTok</span>
+                <span class="contact-social-link__handle">@halohairco</span>
+              </a>
+              <a href="#" class="contact-social-link">
+                <span class="contact-social-link__name">Pinterest</span>
+                <span class="contact-social-link__handle">@halohairco</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="contact-faq">
+    <div class="container">
+      <div class="contact-faq__header">
+        <p class="label">Common Questions</p>
+        <h2 class="contact-faq__title">Quick Answers</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="contact-faq__grid">
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">How does free shade matching work?</h3>
+          <p class="faq-item__a">Simply send us a photo of your natural hair in natural daylight — no flash, no filters. Our stylists will recommend up to three shades within 4 hours, Monday to Friday.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">How long does delivery take?</h3>
+          <p class="faq-item__a">All UK orders are shipped next-day tracked via Royal Mail Special Delivery, dispatched same day on orders placed before 1pm. International orders take 3–5 working days.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">What is your returns policy?</h3>
+          <p class="faq-item__a">We accept returns of unworn, unsealed extensions within 30 days of purchase. Contact us and we'll arrange a prepaid return label — no questions asked.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">Are the extensions heat-friendly?</h3>
+          <p class="faq-item__a">Yes. All Halo Hair Co extensions are 100% Remy human hair and can be styled with heat tools up to 230°C, just like your natural hair. We recommend a heat protector spray.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">Do you offer wholesale pricing?</h3>
+          <p class="faq-item__a">We have an established trade programme for salons and stylists. Contact us via the form above with your salon details and we'll be in touch with our trade pricing guide.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">How do I know my extensions are authentic?</h3>
+          <p class="faq-item__a">Every set ships with a unique authentication code. Visit our <a href="verify.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Verify page</a> to confirm your extensions are genuine Halo Hair Co products.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ── FOOTER ── -->
-  <footer class="site-footer" style="margin-top:80px;">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer__grid">
         <div>
           <p class="footer__brand-name">HALO HAIR CO</p>
           <p class="footer__brand-sub">London · Premium Extensions</p>
-          <p class="footer__brand-text">Luxury human hair extensions for the modern woman.</p>
+          <p class="footer__brand-text">Luxury human hair extensions for the modern woman. Ethically sourced. Flawlessly crafted.</p>
         </div>
         <div>
           <p class="footer__col-title">Shop</p>
           <ul class="footer__links">
-            <li><a href="shop.html">Clip-In Extensions</a></li>
-            <li><a href="shop.html">Tape-In Extensions</a></li>
-            <li><a href="shop.html">Weft Extensions</a></li>
-            <li><a href="shop.html">Micro-Ring</a></li>
+            <li><a href="shop.html?type=clip-in">Clip-In Extensions</a></li>
+            <li><a href="shop.html?type=tape-in">Tape-In Extensions</a></li>
+            <li><a href="shop.html?type=weft">Weft Extensions</a></li>
+            <li><a href="shop.html?type=micro-ring">Micro-Ring</a></li>
           </ul>
         </div>
         <div>
@@ -153,7 +248,7 @@
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="verify.html">Verify Authenticity</a></li>
             <li><a href="shade-matching.html">Shade Matching</a></li>
-            <li><a href="shipping.html">Shipping & Returns</a></li>
+            <li><a href="shipping.html">Shipping &amp; Returns</a></li>
             <li><a href="care-guide.html">Care Guide</a></li>
           </ul>
         </div>
@@ -167,7 +262,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">© 2024 Halo Hair Co Ltd. halohairco.co.uk</p>
+        <p class="footer__copy">© 2024 Halo Hair Co Ltd. All rights reserved. halohairco.co.uk</p>
         <div class="footer__social">
           <a href="#">Instagram</a>
           <a href="#">TikTok</a>
