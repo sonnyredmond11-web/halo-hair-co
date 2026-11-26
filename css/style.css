@@ -1001,6 +1001,244 @@ h1, h2, h3, h4 {
   margin-top: 16px;
 }
 
+/* ── SHOP PAGE HERO ──────────────────────────────────── */
+
+.shop-page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 160px 40px 80px;
+  text-align: center;
+  background: var(--bg);
+}
+
+.shop-page-hero__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(120px, 20vw, 260px);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--gold-pale);
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.shop-page-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.shop-page-hero__title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(44px, 7vw, 88px);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-top: 14px;
+}
+
+.shop-page-hero__sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+/* ── SHOP META BAR ───────────────────────────────────── */
+
+.shop-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.shop-meta__count {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.shop-meta__note {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-mid);
+}
+
+/* ── PRODUCT CARD ENHANCEMENTS ───────────────────────── */
+
+.product-card__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.badge--seller {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.badge--new {
+  background: var(--text);
+  color: var(--white);
+}
+
+.product-card__wish {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(253,250,245,0.85);
+  backdrop-filter: blur(8px);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: var(--text-mid);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s;
+  z-index: 2;
+}
+
+.product-card:hover .product-card__wish {
+  opacity: 1;
+}
+
+.product-card__wish:hover {
+  color: var(--gold);
+}
+
+.product-card__swatches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 6px;
+}
+
+.swatch {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.swatch:hover {
+  transform: scale(1.2);
+}
+
+.swatch--more {
+  background: none;
+  border: 1px solid var(--border);
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0;
+  color: var(--text-light);
+  width: 24px;
+  height: 14px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.product-card__rating {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: var(--gold);
+}
+
+.product-card__rating span {
+  color: var(--text-light);
+  font-size: 10px;
+}
+
+/* ── SHOP GRID SPACING ───────────────────────────────── */
+
+.shop-grid {
+  margin-bottom: 100px;
+}
+
+/* ── SHADE MATCH CTA ─────────────────────────────────── */
+
+.shade-cta {
+  background: var(--text);
+  padding: 72px 0;
+}
+
+.shade-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.shade-cta__title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--white);
+  margin: 10px 0 16px;
+}
+
+.shade-cta__body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.shade-cta__btn {
+  flex-shrink: 0;
+  border-color: rgba(192,154,58,0.6);
+  color: var(--gold-pale);
+  white-space: nowrap;
+}
+
+.shade-cta__btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .shade-cta__inner { flex-direction: column; gap: 32px; }
+  .shade-cta__btn { align-self: flex-start; }
+  .shop-page-hero__bg { font-size: 100px; opacity: 0.2; }
+}
+
 .shop-filters {
   padding: 32px 0;
   border-bottom: 1px solid var(--border);
