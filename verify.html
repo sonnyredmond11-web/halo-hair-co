@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authenticity Certificate — Halo Hair Co</title>
+  <meta name="description" content="Verify your Halo Hair Co extensions are 100% genuine Remy human hair." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── VERIFY PAGE ── */
+    .verify-hero {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 40px 60px;
+      background: transparent;
+    }
+    .verify-hero__eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .verify-hero__title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .verify-hero__sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.6;
+      max-width: 420px;
+      line-height: 1.6;
+    }
+
+    /* ── LOOKUP FORM ── */
+    .verify-form-section {
+      padding: 20px 40px 80px;
+      display: flex;
+      justify-content: center;
+    }
+    .verify-form {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 48px 56px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.04);
+    }
+    .verify-form__label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .verify-form__input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.7);
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s;
+      text-transform: uppercase;
+      box-sizing: border-box;
+    }
+    .verify-form__input:focus { border-color: var(--gold); }
+    .verify-form__input::placeholder { opacity: 0.35; letter-spacing: 0.08em; }
+    .verify-form__hint {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      color: var(--text);
+      opacity: 0.4;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+    .verify-form__btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .verify-form__btn:hover { background: var(--gold-dark); }
+    .verify-form__error {
+      display: none;
+      margin-top: 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      color: #c0392b;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── CERTIFICATE ── */
+    .certificate-wrap {
+      display: none;
+      padding: 20px 40px 100px;
+      justify-content: center;
+    }
+    .certificate-wrap.visible { display: flex; }
+    .certificate {
+      position: relative;
+      max-width: 680px;
+      width: 100%;
+      background: #FFFDF8;
+      border: 1px solid rgba(184,150,62,0.3);
+      padding: 56px 64px;
+      text-align: center;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.07);
+    }
+    /* Gold corner ornaments */
+    .certificate::before,
+    .certificate::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+    .certificate::before {
+      top: 16px; left: 16px;
+      border-top: 1px solid var(--gold);
+      border-left: 1px solid var(--gold);
+    }
+    .certificate::after {
+      bottom: 16px; right: 16px;
+      border-bottom: 1px solid var(--gold);
+      border-right: 1px solid var(--gold);
+    }
+    .cert-corner-tr, .cert-corner-bl {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+    .cert-corner-tr { top: 16px; right: 16px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+    .cert-corner-bl { bottom: 16px; left: 16px; border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+
+    .cert-brand {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .cert-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.4;
+      margin-bottom: 32px;
+    }
+    .cert-divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 32px;
+    }
+    .cert-heading {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .cert-heading span { color: var(--gold); }
+    .cert-of {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.45;
+      margin-bottom: 36px;
+    }
+    .cert-body {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text);
+      max-width: 440px;
+      margin: 0 auto 36px;
+      opacity: 0.85;
+    }
+    .cert-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+      margin-bottom: 36px;
+    }
+    .cert-spec__label {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.4;
+      margin-bottom: 6px;
+    }
+    .cert-spec__value {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+    .cert-code-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.35;
+      margin-bottom: 8px;
+    }
+    .cert-code-value {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 36px;
+      text-transform: uppercase;
+    }
+    .cert-seal {
+      width: 72px;
+      height: 72px;
+      border: 1px solid rgba(184,150,62,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      background: radial-gradient(circle, rgba(232,217,184,0.2) 0%, transparent 70%);
+    }
+    .cert-seal-icon {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 26px;
+      color: var(--gold);
+    }
+    .cert-verified {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 36px;
+    }
+    .cert-sig-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .cert-sig__line {
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    .cert-sig__title {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.4;
+    }
+    .cert-sig__name {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text);
+      margin-top: 2px;
+    }
+    .cert-print-btn {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 11px 32px;
+      border: 1px solid var(--gold);
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.2s;
+    }
+    .cert-print-btn:hover { background: var(--gold); color: #fff; }
+
+    /* ── HOW IT WORKS ── */
+    .verify-how {
+      padding: 60px 40px 100px;
+      background: rgba(255,255,255,0.3);
+    }
+    .verify-how__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .verify-how__title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      margin-bottom: 48px;
+    }
+    .verify-how__steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .verify-how__step-num {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .verify-how__step-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .verify-how__step-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text);
+      opacity: 0.55;
+    }
+
+    @media (max-width: 600px) {
+      .verify-form { padding: 36px 28px; }
+      .certificate { padding: 40px 28px; }
+      .cert-specs { grid-template-columns: 1fr; gap: 16px; }
+      .cert-sig-row { grid-template-columns: 1fr; gap: 24px; }
+      .verify-how__steps { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    @media print {
+      .site-header, .verify-hero, .verify-form-section, .verify-how, .site-footer,
+      .cert-print-btn { display: none !important; }
+      .certificate-wrap { display: flex !important; padding: 0; }
+      .certificate { box-shadow: none; border-color: #B8963E; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        HALO <span>HAIR CO</span>
+        <span class="nav__logo-sub">London</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__cart" id="cartToggle">Bag (0)</button>
+        <button class="nav__hamburger" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="verify-hero">
+    <div>
+      <p class="verify-hero__eyebrow">Halo Hair Co</p>
+      <h1 class="verify-hero__title">Authenticity<br>Certificate</h1>
+      <p class="verify-hero__sub">Every Halo Hair Co order comes with a unique certificate code. Enter it below to confirm your extensions are 100% genuine Remy human hair.</p>
+    </div>
+  </section>
+
+  <!-- ── LOOKUP FORM ── -->
+  <section class="verify-form-section">
+    <div class="verify-form">
+      <label class="verify-form__label" for="certCode">Enter your certificate code</label>
+      <input class="verify-form__input" id="certCode" type="text" placeholder="HHC-XXXXXXXX" maxlength="12" autocomplete="off" />
+      <p class="verify-form__hint">Found on your packaging card or order confirmation email</p>
+      <button class="verify-form__btn" id="verifyBtn">Verify My Extensions</button>
+      <p class="verify-form__error" id="verifyError">Code not recognised. Please check your packaging and try again, or <a href="contact.html" style="color:inherit;text-decoration:underline;">contact us</a>.</p>
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATE ── -->
+  <div class="certificate-wrap" id="certWrap">
+    <div class="certificate">
+      <span class="cert-corner-tr"></span>
+      <span class="cert-corner-bl"></span>
+
+      <p class="cert-brand">Halo Hair Co</p>
+      <p class="cert-sub">London · Est. 2024</p>
+      <div class="cert-divider"></div>
+
+      <p class="cert-of">Certificate</p>
+      <h2 class="cert-heading">Of <span>Authenticity</span></h2>
+      <p class="cert-of" style="margin-top:4px;margin-bottom:36px;">Genuine Remy Human Hair</p>
+
+      <p class="cert-body">
+        This certifies that the hair extensions bearing this certificate are crafted from 100% ethically sourced Remy human hair, hand-selected for quality, strength and natural lustre.
+      </p>
+
+      <div class="cert-specs">
+        <div>
+          <p class="cert-spec__label">Hair Grade</p>
+          <p class="cert-spec__value">100% Remy</p>
+        </div>
+        <div>
+          <p class="cert-spec__label">Origin</p>
+          <p class="cert-spec__value">South Asia</p>
+        </div>
+        <div>
+          <p class="cert-spec__label">Process</p>
+          <p class="cert-spec__value">Single-Draw</p>
+        </div>
+      </div>
+
+      <p class="cert-code-label">Certificate Code</p>
+      <p class="cert-code-value" id="certCodeDisplay">—</p>
+
+      <div class="cert-seal">
+        <span class="cert-seal-icon">✦</span>
+      </div>
+      <p class="cert-verified">Verified Authentic</p>
+
+      <div class="cert-sig-row">
+        <div class="cert-sig__line">
+          <p class="cert-sig__title">Quality Director</p>
+          <p class="cert-sig__name">Halo Hair Co</p>
+        </div>
+        <div class="cert-sig__line">
+          <p class="cert-sig__title">Issue Date</p>
+          <p class="cert-sig__name" id="certDate">—</p>
+        </div>
+      </div>
+
+      <button class="cert-print-btn" onclick="window.print()">Print Certificate</button>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="verify-how">
+    <div class="verify-how__inner">
+      <h2 class="verify-how__title">How Verification Works</h2>
+      <div class="verify-how__steps">
+        <div>
+          <p class="verify-how__step-num">01</p>
+          <p class="verify-how__step-title">Find Your Code</p>
+          <p class="verify-how__step-text">Your unique certificate code is printed on the gold card inside your Halo Hair Co box, and included in your order confirmation email.</p>
+        </div>
+        <div>
+          <p class="verify-how__step-num">02</p>
+          <p class="verify-how__step-title">Enter or Scan</p>
+          <p class="verify-how__step-text">Type your code above or scan the QR code on your packaging card. Each code is unique to your order and can only be verified once.</p>
+        </div>
+        <div>
+          <p class="verify-how__step-num">03</p>
+          <p class="verify-how__step-title">Receive Confirmation</p>
+          <p class="verify-how__step-text">Your personalised certificate confirms your extensions are 100% genuine Remy human hair, ethically sourced and quality-checked by our team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">HALO HAIR CO</p>
+          <p class="footer__brand-sub">London · Premium Extensions</p>
+          <p class="footer__brand-text">Luxury human hair extensions for the modern woman.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?type=clip-in">Clip-In Extensions</a></li>
+            <li><a href="shop.html?type=tape-in">Tape-In Extensions</a></li>
+            <li><a href="shop.html?type=weft">Weft Extensions</a></li>
+            <li><a href="shop.html?type=micro-ring">Micro-Ring</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="verify.html">Verify Authenticity</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Care Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2024 Halo Hair Co Ltd. halohairco.co.uk</p>
+        <div class="footer__social">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer (shared) -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <p class="cart-drawer__title">Your Bag</p>
+      <button class="cart-drawer__close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <p class="cart-drawer__empty">Your bag is empty.</p>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total">
+        <span>Total</span><span id="cartTotal">£0</span>
+      </div>
+      <a href="#" class="btn btn--gold" style="display:block;text-align:center;margin-top:16px;">Checkout</a>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ── Certificate code validation ── */
+    const VALID_PREFIX = 'HHC-';
+
+    function isValidCode(code) {
+      /* Format: HHC- followed by 8 alphanumeric characters */
+      return /^HHC-[A-Z0-9]{8}$/.test(code.trim().toUpperCase());
+    }
+
+    function showCertificate(code) {
+      document.getElementById('certCodeDisplay').textContent = code.toUpperCase();
+      document.getElementById('certDate').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      document.getElementById('certWrap').classList.add('visible');
+      document.getElementById('certWrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('verifyBtn').addEventListener('click', () => {
+      const raw = document.getElementById('certCode').value.trim().toUpperCase();
+      const code = raw.startsWith('HHC-') ? raw : 'HHC-' + raw.replace(/[^A-Z0-9]/g, '');
+      const errEl = document.getElementById('verifyError');
+
+      if (isValidCode(code)) {
+        errEl.style.display = 'none';
+        showCertificate(code);
+      } else {
+        errEl.style.display = 'block';
+        document.getElementById('certWrap').classList.remove('visible');
+      }
+    });
+
+    document.getElementById('certCode').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('verifyBtn').click();
+    });
+
+    /* Auto-verify if code passed in URL e.g. verify.html?code=HHC-AB12CD34 */
+    const urlCode = new URLSearchParams(window.location.search).get('code');
+    if (urlCode) {
+      document.getElementById('certCode').value = urlCode;
+      document.getElementById('verifyBtn').click();
+    }
+  </script>
+</body>
+</html>
