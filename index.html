@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halo Hair Co — Premium Hair Extensions</title>
+  <meta name="description" content="Luxury human hair extensions crafted for those who demand the finest. Clip-ins, tape-ins, weft and micro-ring extensions. Free UK delivery." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        HALO <span>HAIR CO</span>
+        <span class="nav__logo-sub">London</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__cart" id="cartToggle">Bag (0)</button>
+        <button class="nav__hamburger" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── CART DRAWER ── -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title serif">Your Bag</h2>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-empty" id="cartEmpty">
+      <p>Your bag is empty.</p>
+      <a href="shop.html" class="btn btn--outline" style="font-size:10px;padding:12px 28px;">Shop Extensions</a>
+    </div>
+    <div id="cartItems" style="flex:1;overflow-y:auto;display:none;"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:16px;">
+        <span class="label label--mid">Total</span>
+        <span style="font-family:'Cormorant Garant',serif;font-size:22px;" id="cartTotal">£0.00</span>
+      </div>
+      <a href="#" class="btn btn--gold" style="display:block;text-align:center;">Checkout</a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div>
+      <p class="label hero__eyebrow">Premium Human Hair Extensions</p>
+      <h1 class="hero__title">HALO<br>HAIR CO</h1>
+      <p class="hero__subtitle">London · Est. 2024</p>
+      <p class="hero__tagline">Ethically sourced. Flawlessly blended.<br>Made for the woman who commands a room.</p>
+      <div class="hero__actions">
+        <a href="shop.html" class="btn btn--gold">Shop Extensions</a>
+        <a href="about.html" class="btn btn--outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Discover</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── CATEGORIES ── -->
+  <section class="categories">
+    <div class="container">
+      <div class="section__header">
+        <p class="label">Shop by Type</p>
+        <h2 class="section__title">Find Your Match</h2>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="categories__grid">
+      <a href="shop.html?type=clip-in" class="category-card">
+        <div class="category-card__img"></div>
+        <div class="category-card__overlay">
+          <p class="category-card__name">Clip-In</p>
+          <p class="category-card__sub">Instant volume · From £129</p>
+        </div>
+      </a>
+      <a href="shop.html?type=tape-in" class="category-card">
+        <div class="category-card__img"></div>
+        <div class="category-card__overlay">
+          <p class="category-card__name">Tape-In</p>
+          <p class="category-card__sub">Seamless wear · From £249</p>
+        </div>
+      </a>
+      <a href="shop.html?type=weft" class="category-card">
+        <div class="category-card__img"></div>
+        <div class="category-card__overlay">
+          <p class="category-card__name">Weft & Micro-Ring</p>
+          <p class="category-card__sub">Long-term luxury · From £349</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PRODUCTS ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <p class="label">New In</p>
+        <h2 class="section__title">Bestsellers</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="products__grid">
+
+        <div class="product-card" data-id="1" data-name="Honey Blonde Clip-In Set" data-price="129">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(1,'Honey Blonde Clip-In Set',129)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Clip-In · 20"</p>
+          <p class="product-card__name">Honey Blonde</p>
+          <p class="product-card__price">£129</p>
+        </div>
+
+        <div class="product-card" data-id="2" data-name="Warm Auburn Clip-In Set" data-price="129">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(2,'Warm Auburn Clip-In Set',129)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Clip-In · 20"</p>
+          <p class="product-card__name">Warm Auburn</p>
+          <p class="product-card__price">£129</p>
+        </div>
+
+        <div class="product-card" data-id="3" data-name="Espresso Brown Tape-In" data-price="249">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(3,'Espresso Brown Tape-In',249)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Tape-In · 22"</p>
+          <p class="product-card__name">Espresso Brown</p>
+          <p class="product-card__price">£249</p>
+        </div>
+
+        <div class="product-card" data-id="4" data-name="Champagne Blonde Clip-In" data-price="139">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(4,'Champagne Blonde Clip-In',139)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Clip-In · 18"</p>
+          <p class="product-card__name">Champagne Blonde</p>
+          <p class="product-card__price">£139</p>
+        </div>
+
+        <div class="product-card" data-id="5" data-name="Ash Brown Weft" data-price="349">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(5,'Ash Brown Weft',349)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Weft · 24"</p>
+          <p class="product-card__name">Ash Brown</p>
+          <p class="product-card__price">£349</p>
+        </div>
+
+        <div class="product-card" data-id="6" data-name="Golden Caramel Tape-In" data-price="269">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(6,'Golden Caramel Tape-In',269)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Tape-In · 20"</p>
+          <p class="product-card__name">Golden Caramel</p>
+          <p class="product-card__price">£269</p>
+        </div>
+
+        <div class="product-card" data-id="7" data-name="Jet Black Micro-Ring" data-price="379">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(7,'Jet Black Micro-Ring',379)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Micro-Ring · 22"</p>
+          <p class="product-card__name">Jet Black</p>
+          <p class="product-card__price">£379</p>
+        </div>
+
+        <div class="product-card" data-id="8" data-name="Natural Blonde Clip-In" data-price="119">
+          <div class="product-card__img">
+            <div class="product-card__img-inner"></div>
+            <button class="product-card__quick-add" onclick="addToCart(8,'Natural Blonde Clip-In',119)">Add to Bag</button>
+          </div>
+          <p class="product-card__label">Clip-In · 16"</p>
+          <p class="product-card__name">Natural Blonde</p>
+          <p class="product-card__price">£119</p>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="shop.html" class="btn btn--outline">View All Extensions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROMISE ── -->
+  <section class="promise">
+    <div class="container">
+      <div class="promise__grid">
+        <div>
+          <div class="promise__item-icon">✦</div>
+          <p class="promise__item-title">100% Human Hair</p>
+          <p class="promise__item-text">Ethically sourced Remy hair. Soft, tangle-free and heat-friendly up to 230°C.</p>
+        </div>
+        <div>
+          <div class="promise__item-icon">✦</div>
+          <p class="promise__item-title">Free UK Delivery</p>
+          <p class="promise__item-text">Free next-day tracked delivery on all orders over £80. Discreet luxury packaging.</p>
+        </div>
+        <div>
+          <div class="promise__item-icon">✦</div>
+          <p class="promise__item-title">Shade Matching</p>
+          <p class="promise__item-text">Not sure of your shade? Send us a photo and our stylists will advise for free.</p>
+        </div>
+        <div>
+          <div class="promise__item-icon">✦</div>
+          <p class="promise__item-title">30-Day Returns</p>
+          <p class="promise__item-text">Unworn extensions returned within 30 days, no questions asked. Your peace of mind guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STORY ── -->
+  <section class="story">
+    <div class="container">
+      <div class="story__inner">
+        <div class="story__visual"></div>
+        <div class="story__content">
+          <p class="label">Our Story</p>
+          <h2 class="story__title">Born from a belief that every woman deserves extraordinary hair.</h2>
+          <p class="story__text">Halo Hair Co was founded with one simple obsession: to create hair extensions so natural, so seamlessly blended, that nobody could tell where your hair ends and ours begins.</p>
+          <p class="story__text">Every set is handcrafted from 100% ethically sourced Remy human hair — selected strand by strand for its texture, lustre, and longevity. We believe luxury should feel effortless.</p>
+          <div class="story__cta">
+            <a href="about.html" class="btn btn--outline-gold">Our Philosophy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="label">What Our Clients Say</p>
+      <h2 class="section__title" style="margin-top:12px;">Real Results</h2>
+      <div class="divider"></div>
+      <div class="testimonials__grid">
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote">"I've tried so many extensions but Halo Hair Co is on another level. They blend perfectly with my natural hair and last so long."</p>
+          <p class="testimonial__author">— Sophie M., London</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote">"The shade matching service is incredible. They nailed my colour on the first try. I genuinely can't wear my hair without them now."</p>
+          <p class="testimonial__author">— Priya K., Manchester</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote">"Delivery was next day and the packaging was beautiful. These are the most luxurious extensions I've owned at this price point."</p>
+          <p class="testimonial__author">— Amelia T., Edinburgh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter">
+    <div class="container--narrow">
+      <p class="label">Stay in the Loop</p>
+      <h2 class="newsletter__title">New shades. Exclusive drops.<br>Styling secrets.</h2>
+      <p class="newsletter__sub">Join the Halo edit — first access to new arrivals, 10% off your first order.</p>
+      <form class="newsletter__form" onsubmit="handleNewsletterSubmit(event)">
+        <input type="email" class="newsletter__input" placeholder="Your email address" required />
+        <button type="submit" class="newsletter__btn">Join</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">HALO HAIR CO</p>
+          <p class="footer__brand-sub">London · Premium Extensions</p>
+          <p class="footer__brand-text">Luxury human hair extensions for the modern woman. Ethically sourced. Flawlessly crafted.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?type=clip-in">Clip-In Extensions</a></li>
+            <li><a href="shop.html?type=tape-in">Tape-In Extensions</a></li>
+            <li><a href="shop.html?type=weft">Weft Extensions</a></li>
+            <li><a href="shop.html?type=micro-ring">Micro-Ring</a></li>
+            <li><a href="shop.html?sale=true">Sale</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Shade Matching</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Care Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Affiliate Programme</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2024 Halo Hair Co Ltd. All rights reserved. halohairco.co.uk</p>
+        <div class="footer__social">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

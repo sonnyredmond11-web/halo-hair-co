@@ -1,0 +1,1102 @@
+/* ============================================================
+   HALO HAIR CO — Luxury Hair Extensions
+   Style inspired by LK Jewellers: cream, gold, serif, airy
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --bg:        #FAFAF8;
+  --bg-soft:   #F3EDE5;
+  --text:      #1C1C1A;
+  --text-mid:  #5A5753;
+  --text-light:#9A9490;
+  --gold:      #B8963E;
+  --gold-dark: #9A7C2E;
+  --gold-pale: #E8D9B8;
+  --border:    #E0D9CE;
+  --white:     #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── TYPOGRAPHY ──────────────────────────────────────── */
+
+.serif { font-family: 'Cormorant Garant', serif; }
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garant', serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.label--mid {
+  color: var(--text-mid);
+}
+
+/* ── LAYOUT ──────────────────────────────────────────── */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.container--narrow {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--white);
+}
+.btn--gold:hover {
+  background: var(--gold-dark);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+.btn--outline:hover {
+  background: var(--text);
+  color: var(--white);
+}
+
+.btn--outline-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+.btn--outline-gold:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* ── DIVIDER ─────────────────────────────────────────── */
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 20px auto;
+}
+
+/* ── HEADER / NAV ────────────────────────────────────── */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 40px;
+}
+
+.nav__logo {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.nav__logo span {
+  color: var(--gold);
+}
+
+.nav__logo-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: block;
+  margin-top: 2px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav__links a {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background: var(--gold);
+  transition: right 0.3s ease;
+}
+
+.nav__links a:hover,
+.nav__links a.active {
+  color: var(--text);
+}
+
+.nav__links a:hover::after,
+.nav__links a.active::after {
+  right: 0;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav__cart {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--text-mid);
+  transition: color 0.2s;
+}
+
+.nav__cart:hover { color: var(--gold); }
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--text);
+  transition: all 0.3s;
+}
+
+/* ── HERO ────────────────────────────────────────────── */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(184,150,62,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__eyebrow {
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.hero__subtitle {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 36px;
+}
+
+.hero__tagline {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-mid);
+  margin-bottom: 48px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__scroll span {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(0.6); }
+}
+
+/* ── SECTION SHARED ──────────────────────────────────── */
+
+.section {
+  padding: 100px 0;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section__title {
+  font-size: clamp(32px, 5vw, 54px);
+  margin-top: 12px;
+}
+
+/* ── CATEGORIES STRIP ────────────────────────────────── */
+
+.categories {
+  background: var(--bg-soft);
+  padding: 70px 0;
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-card__img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--gold-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.6s ease;
+}
+
+.category-card:hover .category-card__img {
+  transform: scale(1.03);
+}
+
+.category-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Gradient placeholders mimicking hair textures */
+.category-card:nth-child(1) .category-card__img {
+  background: linear-gradient(160deg, #E8D9B8 0%, #C9A96E 40%, #A07840 100%);
+}
+.category-card:nth-child(2) .category-card__img {
+  background: linear-gradient(160deg, #F5EDE0 0%, #DEC5A8 40%, #B8906A 100%);
+}
+.category-card:nth-child(3) .category-card__img {
+  background: linear-gradient(160deg, #3A2E28 0%, #5C4535 40%, #7D6048 100%);
+}
+
+.category-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 36px 24px;
+  background: linear-gradient(to top, rgba(28,28,26,0.55) 0%, transparent 50%);
+}
+
+.category-card__name {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.category-card__sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ── PRODUCTS GRID ───────────────────────────────────── */
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  cursor: pointer;
+}
+
+.product-card__img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.product-card__img-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__img-inner {
+  transform: scale(1.04);
+}
+
+/* Warm gradient placeholders for hair swatches */
+.product-card:nth-child(1) .product-card__img-inner {
+  background: linear-gradient(170deg, #F5E6D0 0%, #D4A878 60%, #A87040 100%);
+}
+.product-card:nth-child(2) .product-card__img-inner {
+  background: linear-gradient(170deg, #EDE0D4 0%, #C4987C 60%, #8B5E3C 100%);
+}
+.product-card:nth-child(3) .product-card__img-inner {
+  background: linear-gradient(170deg, #2E2420 0%, #4A3728 50%, #6E5240 100%);
+}
+.product-card:nth-child(4) .product-card__img-inner {
+  background: linear-gradient(170deg, #F9F3EC 0%, #E8D5BB 60%, #C4A07A 100%);
+}
+.product-card:nth-child(5) .product-card__img-inner {
+  background: linear-gradient(170deg, #DFD5C8 0%, #B8A090 60%, #856E60 100%);
+}
+.product-card:nth-child(6) .product-card__img-inner {
+  background: linear-gradient(170deg, #F0E8DC 0%, #CBAD94 60%, #9A7256 100%);
+}
+.product-card:nth-child(7) .product-card__img-inner {
+  background: linear-gradient(170deg, #3D2E26 0%, #5A4035 50%, #7A5A48 100%);
+}
+.product-card:nth-child(8) .product-card__img-inner {
+  background: linear-gradient(170deg, #F7F0E8 0%, #E0CCB0 60%, #BEA07E 100%);
+}
+
+.product-card__quick-add {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(28,28,26,0.85);
+  color: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 14px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.product-card:hover .product-card__quick-add {
+  transform: translateY(0);
+}
+
+.product-card__label {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.product-card__name {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.product-card__price {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+/* ── PROMISE STRIP ───────────────────────────────────── */
+
+.promise {
+  background: var(--text);
+  color: var(--white);
+  padding: 60px 0;
+}
+
+.promise__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.promise__item-icon {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--gold);
+}
+
+.promise__item-title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.promise__item-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+/* ── BRAND STORY ─────────────────────────────────────── */
+
+.story {
+  padding: 120px 0;
+}
+
+.story__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story__visual {
+  aspect-ratio: 4/5;
+  background: linear-gradient(145deg, var(--bg-soft) 0%, var(--gold-pale) 50%, var(--border) 100%);
+  position: relative;
+}
+
+.story__visual::after {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border: 1px solid var(--gold-pale);
+  pointer-events: none;
+}
+
+.story__content .label { margin-bottom: 20px; }
+
+.story__title {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+
+.story__text {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.story__cta { margin-top: 36px; }
+
+/* ── TESTIMONIALS ────────────────────────────────────── */
+
+.testimonials {
+  background: var(--bg-soft);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.testimonial {
+  padding: 40px 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+.testimonial__stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.testimonial__quote {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.testimonial__author {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* ── NEWSLETTER ──────────────────────────────────────── */
+
+.newsletter {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.newsletter__title {
+  font-size: clamp(28px, 4vw, 48px);
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.newsletter__sub {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 40px;
+}
+
+.newsletter__form {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.newsletter__input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  border-right: none;
+  background: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+}
+
+.newsletter__input::placeholder { color: var(--text-light); }
+.newsletter__input:focus { border-color: var(--gold); }
+
+.newsletter__btn {
+  padding: 14px 28px;
+  background: var(--gold);
+  color: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter__btn:hover { background: var(--gold-dark); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+
+.site-footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.6);
+  padding: 60px 0 30px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 28px;
+}
+
+.footer__brand-name {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.footer__brand-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+
+.footer__brand-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+  max-width: 280px;
+}
+
+.footer__col-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.2s;
+}
+
+.footer__links a:hover { color: var(--gold); }
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.footer__copy { color: rgba(255,255,255,0.3); }
+
+.footer__social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__social a {
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer__social a:hover { color: var(--gold); }
+
+/* ── SHOP PAGE ───────────────────────────────────────── */
+
+.page-hero {
+  padding: 160px 40px 80px;
+  text-align: center;
+  background: var(--bg);
+}
+
+.page-hero__title {
+  font-size: clamp(40px, 6vw, 72px);
+}
+
+.page-hero__sub {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-top: 16px;
+}
+
+.shop-filters {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.shop-filters__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.shop-filters__tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.filter-tab {
+  padding: 8px 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid transparent;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+  color: var(--text);
+  border-bottom-color: var(--gold);
+}
+
+.shop-filters__sort {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 8px 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ── ABOUT PAGE ──────────────────────────────────────── */
+
+.about-hero {
+  padding: 160px 40px 100px;
+  text-align: center;
+}
+
+.about-values {
+  background: var(--bg-soft);
+  padding: 100px 0;
+}
+
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 56px;
+  text-align: center;
+}
+
+.value-item__number {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--gold-pale);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.value-item__title {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.value-item__text {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ── CONTACT PAGE ────────────────────────────────────── */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 100px 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+.form-input,
+.form-textarea {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-info {
+  padding-top: 40px;
+}
+
+.contact-info__item {
+  margin-bottom: 36px;
+}
+
+.contact-info__label {
+  margin-bottom: 6px;
+}
+
+.contact-info__value {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 20px;
+  color: var(--text);
+}
+
+/* ── CART DRAWER ─────────────────────────────────────── */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28,28,26,0.4);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  background: var(--bg);
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-drawer__title {
+  font-size: 22px;
+}
+
+.cart-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-mid);
+  line-height: 1;
+}
+
+.cart-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  color: var(--text-light);
+}
+
+.cart-empty p { font-size: 14px; }
+
+.cart-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.cart-footer .btn { width: 100%; text-align: center; }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .products__grid { grid-template-columns: repeat(3, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .story__inner { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+
+  .hero { padding: 100px 24px 80px; }
+
+  .categories__grid { grid-template-columns: 1fr; }
+  .products__grid { grid-template-columns: repeat(2, 1fr); }
+  .promise__grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .story__inner { grid-template-columns: 1fr; }
+  .story__visual { aspect-ratio: 3/2; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .about-values__grid { grid-template-columns: 1fr; }
+
+  .container, .container--narrow { padding: 0 24px; }
+  .nav { padding: 0 24px; }
+
+  .cart-drawer { width: 100%; }
+
+  .newsletter__form { flex-direction: column; }
+  .newsletter__input { border-right: 1px solid var(--border); }
+}
