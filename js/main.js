@@ -90,14 +90,33 @@ function handleScroll() {
 }
 
 /* ── FILTER TABS (shop page) ── */
+function applyFilter(type) {
+  const cards = document.querySelectorAll('.product-card[data-type]');
+  cards.forEach(card => {
+    card.style.display = (!type || card.dataset.type === type) ? '' : 'none';
+  });
+}
+
 function initFilterTabs() {
   const tabs = document.querySelectorAll('.filter-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
+  if (!tabs.length) return;
+
+  const tabTypeMap = { 'All': '', 'Clip-In': 'clip-in', 'Tape-In': 'tape-in', 'Weft': 'weft', 'Micro-Ring': 'micro-ring' };
+
+  function activateTab(tab) {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    applyFilter(tabTypeMap[tab.textContent.trim()] ?? '');
+  }
+
+  tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab)));
+
+  /* Apply filter from URL param e.g. ?type=clip-in */
+  const urlType = new URLSearchParams(window.location.search).get('type');
+  if (urlType) {
+    const match = [...tabs].find(t => (tabTypeMap[t.textContent.trim()] ?? '') === urlType);
+    if (match) activateTab(match);
+  }
 }
 
 /* ── INIT ── */
