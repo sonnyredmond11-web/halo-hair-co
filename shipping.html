@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shipping & Returns — Halo Hair Co</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .info-hero { min-height: 32vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:140px 40px 50px; }
+    .info-hero__eyebrow { font-family:'Jost',sans-serif; font-size:10px; font-weight:500; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+    .info-hero__title { font-family:'Cormorant Garant',serif; font-size:clamp(32px,5vw,52px); font-weight:300; letter-spacing:0.06em; color:var(--text); }
+    .info-body { max-width:720px; margin:0 auto; padding:20px 40px 100px; }
+    .info-section { margin-bottom:48px; padding-bottom:48px; border-bottom:1px solid var(--border); }
+    .info-section:last-child { border-bottom:none; }
+    .info-section__title { font-family:'Cormorant Garant',serif; font-size:22px; font-weight:400; letter-spacing:0.06em; color:var(--text); margin-bottom:16px; }
+    .info-section p { font-family:'Jost',sans-serif; font-size:14px; line-height:1.8; color:var(--text); opacity:0.7; margin-bottom:12px; }
+    .info-section ul { list-style:none; padding:0; }
+    .info-section ul li { font-family:'Jost',sans-serif; font-size:14px; line-height:1.8; color:var(--text); opacity:0.7; padding:6px 0 6px 20px; position:relative; }
+    .info-section ul li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:8px; top:9px; }
+    .info-badge { display:inline-block; padding:6px 16px; border:1px solid var(--gold); font-family:'Jost',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">HALO <span>HAIR CO</span><span class="nav__logo-sub">London</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__cart" id="cartToggle">Bag (0)</button>
+        <button class="nav__hamburger" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="info-hero">
+    <div>
+      <p class="info-hero__eyebrow">Halo Hair Co</p>
+      <h1 class="info-hero__title">Shipping & Returns</h1>
+    </div>
+  </section>
+
+  <div class="info-body">
+
+    <div class="info-section">
+      <p class="info-badge">Free UK Delivery</p>
+      <h2 class="info-section__title">Delivery Information</h2>
+      <ul>
+        <li>Free next-day tracked delivery on all UK orders over £80</li>
+        <li>Standard UK delivery (2–3 days) — £4.95 on orders under £80</li>
+        <li>Next-day delivery guaranteed when ordered before 2pm Monday–Friday</li>
+        <li>Orders placed on weekends are dispatched the following Monday</li>
+        <li>International delivery available — rates calculated at checkout</li>
+        <li>EU delivery: 3–5 working days</li>
+        <li>Rest of World: 5–10 working days</li>
+      </ul>
+      <p>All orders are dispatched from our London warehouse and sent via Royal Mail Tracked or DPD. You will receive a tracking number by email once your order has shipped.</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-badge">30-Day Returns</p>
+      <h2 class="info-section__title">Returns Policy</h2>
+      <p>We want you to love your Halo Hair Co extensions. If for any reason you are not completely satisfied, we offer a 30-day returns policy on all unworn, unopened items.</p>
+      <ul>
+        <li>Items must be returned within 30 days of delivery</li>
+        <li>Extensions must be unworn, in their original packaging with tags attached</li>
+        <li>For hygiene reasons, we cannot accept returns on worn or used hair extensions</li>
+        <li>Sale items are non-refundable but can be exchanged</li>
+        <li>Return postage is the customer's responsibility unless the item is faulty</li>
+      </ul>
+      <p>To start a return, please <a href="contact.html" style="color:var(--gold);">contact us</a> with your order number and reason for return. We will respond within 24 hours with return instructions.</p>
+    </div>
+
+    <div class="info-section">
+      <h2 class="info-section__title">Exchanges</h2>
+      <p>Want a different shade or length? We're happy to exchange unworn extensions within 30 days. Contact our team with your order number and we'll arrange a free exchange on your first order.</p>
+      <p>Not sure which shade is right for you? Use our free <a href="shade-matching.html" style="color:var(--gold);">Shade Matching</a> service before you buy.</p>
+    </div>
+
+    <div class="info-section">
+      <h2 class="info-section__title">Faulty Items</h2>
+      <p>In the unlikely event that your extensions arrive damaged or faulty, please contact us within 48 hours of delivery with photos of the issue. We will arrange a free replacement or full refund at no cost to you.</p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">HALO HAIR CO</p>
+          <p class="footer__brand-sub">London · Premium Extensions</p>
+          <p class="footer__brand-text">Luxury human hair extensions for the modern woman.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?type=clip-in">Clip-In Extensions</a></li>
+            <li><a href="shop.html?type=tape-in">Tape-In Extensions</a></li>
+            <li><a href="shop.html?type=weft">Weft Extensions</a></li>
+            <li><a href="shop.html?type=micro-ring">Micro-Ring</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="verify.html">Verify Authenticity</a></li>
+            <li><a href="shade-matching.html">Shade Matching</a></li>
+            <li><a href="shipping.html">Shipping & Returns</a></li>
+            <li><a href="care-guide.html">Care Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2024 Halo Hair Co Ltd. halohairco.co.uk</p>
+        <div class="footer__social">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header"><p class="cart-drawer__title">Your Bag</p><button class="cart-drawer__close" id="cartClose">✕</button></div>
+    <div class="cart-drawer__items" id="cartItems"><p class="cart-drawer__empty">Your bag is empty.</p></div>
+    <div class="cart-drawer__footer"><div class="cart-drawer__total"><span>Total</span><span id="cartTotal">£0</span></div><a href="#" class="btn btn--gold" style="display:block;text-align:center;margin-top:16px;">Checkout</a></div>
+  </aside>
+  <script src="js/main.js"></script>
+</body>
+</html>
