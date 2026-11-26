@@ -307,6 +307,32 @@
       color: var(--text);
       margin-top: 2px;
     }
+    .cert-qr-wrap {
+      margin: 0 auto 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .cert-qr-box {
+      width: 90px;
+      height: 90px;
+      padding: 6px;
+      border: 1px solid rgba(184,150,62,0.3);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cert-qr-box canvas, .cert-qr-box img { width: 78px !important; height: 78px !important; display: block; }
+    .cert-qr-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.35;
+    }
     .cert-print-btn {
       display: inline-block;
       margin-top: 36px;
@@ -474,6 +500,11 @@
       </div>
       <p class="cert-verified">Verified Authentic</p>
 
+      <div class="cert-qr-wrap">
+        <div class="cert-qr-box" id="certQR"></div>
+        <p class="cert-qr-label">Scan to verify</p>
+      </div>
+
       <div class="cert-sig-row">
         <div class="cert-sig__line">
           <p class="cert-sig__title">Quality Director</p>
@@ -578,6 +609,7 @@
     </div>
   </aside>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="js/main.js"></script>
   <script>
     /* ── Certificate code validation ── */
@@ -588,10 +620,26 @@
       return /^HHC-[A-Z0-9]{8}$/.test(code.trim().toUpperCase());
     }
 
+    let qrInstance = null;
+
     function showCertificate(code) {
       document.getElementById('certCodeDisplay').textContent = code.toUpperCase();
       document.getElementById('certDate').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
       document.getElementById('certWrap').classList.add('visible');
+
+      /* Generate QR code linking back to this certificate */
+      const qrEl = document.getElementById('certQR');
+      qrEl.innerHTML = '';
+      const verifyUrl = `https://halohairco.co.uk/verify.html?code=${code.toUpperCase()}`;
+      new QRCode(qrEl, {
+        text: verifyUrl,
+        width: 78,
+        height: 78,
+        colorDark: '#1C1C1A',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+
       document.getElementById('certWrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
