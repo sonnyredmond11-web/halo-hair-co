@@ -32,6 +32,31 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── GLOBAL BACKGROUND ──────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(220,185,120,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 10%, rgba(210,170,130,0.14) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 85%, rgba(190,155,110,0.13) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(230,200,160,0.12) 0%, transparent 45%),
+    linear-gradient(160deg, #FAF6EF 0%, #F5EEE3 35%, #F8F2E8 60%, #F3ECE0 100%);
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
@@ -255,7 +280,7 @@ h1, h2, h3, h4 {
   justify-content: center;
   text-align: center;
   padding: 120px 40px 80px;
-  background: var(--bg);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -264,8 +289,54 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, rgba(184,150,62,0.07) 0%, transparent 70%);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(184,150,62,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 80%, rgba(210,170,120,0.08) 0%, transparent 50%);
   pointer-events: none;
+}
+
+/* ── SPINNING HALO BADGE ─────────────────────────────── */
+.hero__badge {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 24px;
+}
+
+.hero__badge-ring {
+  position: absolute;
+  inset: 0;
+  animation: halo-spin 18s linear infinite;
+}
+
+.hero__badge-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__badge-center {
+  position: absolute;
+  inset: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,150,62,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(232,217,184,0.25) 0%, transparent 70%);
+}
+
+.hero__badge-icon {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+@keyframes halo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .hero__eyebrow {
